@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.session
+*.session-journal
+.env
+database/*.db
+database/*.db-*
+database/*.sqlite
+database/*.sqlite3
+.venv/
+venv/

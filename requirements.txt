@@ -1,0 +1,3 @@
+telethon>=1.43.2
+cryptography
+python-dotenv

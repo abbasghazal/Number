@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.session
+*.session-journal
+.env
+database/
+.git/
+.venv/
+venv/
