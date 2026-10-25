@@ -1,0 +1,30 @@
+[Unit]
+Description=Shahem Store Telegram Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=shahembot
+Group=shahembot
+WorkingDirectory=/opt/shahem-store-bot
+EnvironmentFile=/etc/shahem-store-bot.env
+ExecStart=/opt/shahem-store-bot/.venv/bin/python main.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/shahem-store-bot
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
