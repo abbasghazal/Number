@@ -1,0 +1,21 @@
+# Deploys the bot/Mini App only. Create PostgreSQL separately and put its URL
+# in a private .env file under Render Environment > Secret Files.
+services:
+  - type: web
+    name: number-store-bot
+    runtime: docker
+    plan: starter
+    region: frankfurt
+    numInstances: 1
+    healthCheckPath: /readyz
+    disk:
+      name: bot-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: BOT_SESSION_PATH
+        value: /var/data/bot_session
+      - key: BACKUP_DIR
+        value: /var/data/backups
